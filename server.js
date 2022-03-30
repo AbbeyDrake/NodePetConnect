@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const petRouter = require('./routes/petRouter');
 
 const hostname = 'localhost';
 const port = 3000;
@@ -7,6 +8,9 @@ const port = 3000;
 const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
+
+app.use('/campsites', petRouter);
+//what is the path name for my project?
 
 app.use((req, res) => {
     console.log(req.headers);
