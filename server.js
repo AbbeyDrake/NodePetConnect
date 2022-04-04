@@ -9,7 +9,7 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 
-app.use('/campsites', petRouter);
+app.use('/pets', petRouter);
 //what is the path name for my project?
 
 app.use((req, res) => {
